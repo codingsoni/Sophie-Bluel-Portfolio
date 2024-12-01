@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Définit le type de document HTML et la langue principale en français -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Définit l'encodage des caractères en UTF-8 pour supporter tous les caractères -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Définit la compatibilité avec Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajuste l'affichage en fonction de la largeur de l'écran du dispositif -->
+    <title>Sophie Bluel - Architecte d'intérieur</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+
+    <!-- Préconnecte aux domaines pour améliorer la performance de chargement des polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Lien vers les polices Google Fonts utilisées dans la page -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+
+    <meta name="description" content=""> <!-- Meta description vide à compléter pour le référencement SEO -->
+    
+    <!-- Lien vers le fichier CSS pour le style de la page -->
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+    <!-- En-tête de la page contenant le titre et la navigation -->
+    <header>
+		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1> <!-- Titre principal avec sous-titre -->
+		<nav>
+			<ul> <!-- Liste de navigation -->
+				<li>
+                    <a href="index.html">projets</a> <!-- Lien vers la page des projets -->
+                </li>
+				<li>
+                    <a href="index.html">contact</a> <!-- Lien vers la page de contact -->
+                </li>
+				<li>
+                    <a href="login.html" class="active">login</a> <!-- Lien vers la page de connexion, marqué comme actif -->
+                </li>
+				<li>
+                    <a href="#"><img src="./assets/icons/instagram.png" alt="Instagram"></a> <!-- Lien vers Instagram avec une icône -->
+                </li>
+			</ul>
+		</nav>
+	</header>
+
+    <!-- Contenu principal de la page -->
+    <main>
+        <!-- Section de connexion -->
+        <section id="login">
+            <h1>Log In</h1> <!-- Titre de la section de connexion -->
+            
+            <!-- Formulaire de connexion avec l'ID "form-login" -->
+            <form id="form-login">
+                <div class="form-inputs"> <!-- Conteneur pour les champs de saisie du formulaire -->
+                    <div class="form-input"> <!-- Champ de saisie pour l'email -->
+                        <label for="email">E-mail</label> <!-- Étiquette pour l'email -->
+                        <input type="email" id="email" name="email" required> <!-- Champ de saisie pour l'email, requis -->
+                    </div>
+
+                    <div class="form-input"> <!-- Champ de saisie pour le mot de passe -->
+                        <label for="password">Mot de passe</label> <!-- Étiquette pour le mot de passe -->
+                        <input type="password" id="password" name="password" required> <!-- Champ de saisie pour le mot de passe, requis -->
+                    </div>
+                </div>
+
+                <!-- Bouton de soumission pour se connecter -->
+                <input class="login-btn" type="submit" value="Se connecter">
+                <a href="#">Mot de passe oublié</a> <!-- Lien pour réinitialiser le mot de passe -->
+            </form>
+
+            <!-- Message d'erreur affiché si la connexion échoue -->
+            <p id="error-login">E-mail ou mot de passe incorrect.</p>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+		<nav>
+			<ul> <!-- Liste de navigation du pied de page -->
+				<li>Mentions Légales</li> <!-- Lien vers les mentions légales -->
+			</ul>
+		</nav>
+	</footer>
+
+    <!-- Lien vers le fichier JavaScript pour gérer la connexion -->
+    <script src="login.js"></script>
+</body>
+
+</html>

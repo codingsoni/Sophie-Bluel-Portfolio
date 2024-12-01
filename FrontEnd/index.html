@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Définit le type de document HTML et la langue principale en français -->
+
+<head>
+	<meta charset="UTF-8"> <!-- Définit l'encodage des caractères en UTF-8 pour supporter tous les caractères -->
+	<title>Sophie Bluel - Architecte d'intérieur</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajuste l'affichage en fonction de la largeur de l'écran du dispositif -->
+
+	<!-- Préconnecte aux domaines pour améliorer la performance de chargement des polices -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- Lien vers les polices Google Fonts utilisées dans la page -->
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
+	<meta name="description" content=""> <!-- Meta description vide à compléter pour le référencement SEO -->
+
+	<!-- Lien vers le fichier CSS pour le style de la page -->
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+	<!-- Barre de mode édition pour les utilisateurs connectés -->
+	<div class="editmode" style="display: none;">
+        <p><img src="assets/icons/edit-icon.svg" alt="edit icon">Mode édition</p>
+    </div>
+
+	<!-- Conteneur de la fenêtre modale -->
+	<div class="modal-container" style="display: none;">
+		<div class="modal"> <!-- Conteneur principal de la modale -->
+			<div class="modal-top-btn"> <!-- Boutons de la partie supérieure de la modale -->
+				<button class="modal-comeback" style="visibility: hidden;">
+					<img src="assets/icons/left_arrow-icon.svg" alt="Left Arrow Icon"> <!-- Icône de retour -->
+				</button>
+				<button class="modal-close">
+					<img src="assets/icons/close-icon.svg" alt="Close Icon"> <!-- Icône de fermeture -->
+				</button>
+			</div>
+
+			<p class="modal-title">Galerie photo</p> <!-- Titre dynamique de la modale -->
+
+			<div class="modal-gallery" style="display: none;"></div> <!-- Galerie de photos affichée dans la modale -->
+
+			<div class="modal-bottom-btn line-modal-bottom-btn" style="display: none;"> <!-- Bouton pour ajouter une nouvelle photo -->
+				<button class="btn-addwork btn-valid-addwork">Ajouter une photo</button>
+			</div>
+
+			<div class="modal-addwork" style="display: none;"> <!-- Section pour ajouter un nouveau projet -->
+				<form id="addwork-form">
+					<div class="upload-work"> <!-- Conteneur pour le téléchargement de fichiers -->
+						<div class="upload-work-img" style="display: none;"></div> <!-- Conteneur pour afficher l'image téléchargée -->
+						<div class="upload-work-form"> <!-- Formulaire de téléchargement -->
+							<img src="assets/icons/picture-icon.svg" alt="Picture Icon"> <!-- Icône de téléchargement -->
+							<input name="image" type="file" accept=".png, .jpg" class="img-addwork" required> <!-- Champ de téléchargement de fichier -->
+							<button>&#43; Ajouter photo</button> <!-- Bouton pour déclencher le téléchargement -->
+							<p>jpg, png : 4mo max</p> <!-- Instructions pour le téléchargement de fichiers -->
+						</div>
+					</div>
+					
+					<div class="inputs-addwork"> <!-- Champs d'entrée pour le titre et la catégorie -->
+						<label for="title">Titre</label>
+						<input id="title" name="title" type="text" class="title-addwork" required> <!-- Champ de saisie pour le titre -->
+
+						<label for="category">Catégorie</label>
+						<select id="category" name="category" class="categories-addwork"></select> <!-- Liste déroulante pour sélectionner la catégorie -->
+					</div>
+
+					<input type="submit" class="btn-submit-work" value="Valider" style="background-color: rgb(167, 167, 167);"> <!-- Bouton de soumission pour valider l'ajout de travail -->
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- En-tête de la page contenant le titre et la navigation -->
+	<header>
+		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1> <!-- Titre principal avec sous-titre -->
+		<nav>
+			<ul> <!-- Liste de navigation -->
+				<li>
+					<a href="index.html#portfolio">projets</a> <!-- Lien vers la section "projets" de la page -->
+				</li>
+				<li>
+					<a href="index.html#contact">contact</a> <!-- Lien vers la section "contact" de la page -->
+				</li>
+				<li>
+					<a href="login.html" class="link-login">login</a> <!-- Lien vers la page de connexion -->
+				</li>
+				<li>
+					<a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a> <!-- Lien vers Instagram avec une icône -->
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Contenu principal de la page -->
+	<main>
+		<section id="introduction"> <!-- Section d'introduction -->
+			<figure>
+				<img src="assets/images/sophie-bluel.png" alt="Picture of Sophie Bluel"> <!-- Image de présentation de Sophie Bluel -->
+			</figure>
+			<article>
+				<h2>Designer d'espace</h2> <!-- Sous-titre de la section -->
+				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p> <!-- Paragraphe d'introduction -->
+				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p> <!-- Description du processus de travail -->
+				<p>En cas de besoin, une équipe pluridisciplinaire constituée de : architecte DPLG, décorateur(trice)</p> 
+			</article>
+		</section>
+
+		<section id="portfolio"> <!-- Section des projets -->
+			<h2>
+				Mes Projets
+				<button class="edit-btn" style="display: none;"> <!-- Bouton pour modifier les projets (visible en mode édition) -->
+					<img src="assets/icons/edit-icon.svg" alt="edit icon">
+					modifier
+				</button>
+			</h2>
+
+			<div class="filter" style="display: block;"> <!-- Filtre pour les projets par catégorie -->
+				<ul class="btn-list">
+					<li>
+						<button class="btn btn-active" data-category="0">Tous</button> <!-- Bouton pour afficher tous les projets -->
+					</li>
+				</ul>
+			</div>
+
+			<div class="gallery"> <!-- Galerie pour afficher les projets -->
+			</div>
+		</section>
+
+		<section id="contact"> <!-- Section de contact -->
+			<h2>Contact</h2> <!-- Titre de la section de contact -->
+			<p>Vous avez un projet ? Discutons-en !</p> <!-- Invitation à entrer en contact -->
+			<form action="#" method="post"> <!-- Formulaire de contact -->
+				<label for="name">Nom</label> <!-- Étiquette pour le champ de nom -->
+				<input type="text" name="name" id="name"> <!-- Champ de saisie pour le nom -->
+				<label for="email">Email</label> <!-- Étiquette pour le champ d'email -->
+				<input type="email" name="email" id="email"> <!-- Champ de saisie pour l'email -->
+				<label for="message">Message</label> <!-- Étiquette pour le champ de message -->
+				<textarea name="message" id="message" cols="30" rows="10"></textarea> <!-- Champ de texte pour le message -->
+				<input type="submit" value="Envoyer"> <!-- Bouton de soumission pour envoyer le message -->
+			</form>
+		</section>
+	</main>
+
+	<!-- Pied de page -->
+	<footer>
+		<nav>
+			<ul> <!-- Liste de navigation du pied de page -->
+				<li>Mentions Légales</li> <!-- Lien vers les mentions légales -->
+			</ul>
+		</nav>
+	</footer>
+
+	<!-- Lien vers le fichier JavaScript pour gérer la logique de la page -->
+	<script src="script.js"></script>
+</body>
+
+</html>
+

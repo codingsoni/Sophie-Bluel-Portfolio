@@ -1,0 +1,726 @@
+/* Réinitialisation des styles par défaut pour une meilleure compatibilité entre navigateurs */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0; /* Réinitialise la marge de tous les éléments */
+	padding: 0; /* Réinitialise le padding de tous les éléments */
+	border: 0; /* Réinitialise la bordure de tous les éléments */
+	font-size: 100%; /* Réinitialise la taille de police par défaut */
+	font: inherit; /* Hérite des propriétés de police du parent */
+	vertical-align: baseline; /* Réinitialise l'alignement vertical */
+}
+
+/* Assure que les éléments HTML5 s'affichent correctement en mode block dans les navigateurs plus anciens */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* Définit des styles par défaut pour le body */
+body {
+	line-height: 1; /* Définit une hauteur de ligne par défaut pour le texte */
+}
+
+/* Définit la largeur à 100% pour l'en-tête, le main et le pied de page */
+header, main, footer {
+	width: 100%;
+}
+
+/* Supprime les styles de liste par défaut */
+ol, ul {
+	list-style: none;
+}
+
+/* Supprime les styles de citation par défaut */
+blockquote, q {
+	quotes: none;
+}
+
+/* Supprime le contenu des citations avant et après */
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* Supprime les espaces entre les bordures des cellules dans les tables */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Supprime le soulignement des liens */
+a {
+	text-decoration: none;
+}
+
+/* Supprime le contour par défaut des champs de saisie et des sélections */
+input, select {
+	outline: none;
+}
+
+/* Supprime le style par défaut des boutons */
+button {
+	background: none;
+	border: none;
+	cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+}
+
+/** Fin de la réinitialisation CSS **/
+
+/* Style général du body */
+body {
+	max-width: 1140px; /* Limite la largeur maximale de la page */
+	margin: auto; /* Centre le contenu horizontalement */
+	font-family: 'Work Sans'; /* Utilise la police 'Work Sans' pour tout le texte */
+	font-size: 14px; /* Définit une taille de police par défaut de 14px */
+	background: #FFFEF8; /* Définit une couleur de fond beige clair */
+	min-height: 100vh; /* Assure que le body a au moins la hauteur de la fenêtre */
+    display: flex; /* Utilise Flexbox pour aligner le contenu */
+    flex-direction: column; /* Aligne les éléments verticalement */
+    justify-content: space-between; /* Espace les éléments de manière égale */
+	align-items: baseline; /* Aligne les éléments sur une ligne de base commune */
+}
+
+/* Style pour le body lorsqu'il n'est pas en mode édition */
+body.no-editmode header {
+    padding-top: 0; /* Supprime le padding supérieur de l'en-tête */
+}
+
+/* Style pour l'en-tête de la page */
+header {
+	display: flex; /* Utilise Flexbox pour aligner les éléments de l'en-tête */
+	justify-content: space-between; /* Aligne les éléments à chaque extrémité de l'en-tête */
+	margin: 50px 0; /* Ajoute de l'espace au-dessus et en dessous de l'en-tête */
+	padding-top: 60px; /* Ajoute de l'espace au-dessus du contenu de l'en-tête */
+}
+
+/* Style général pour chaque section de la page */
+section {
+	margin: 50px 0; /* Ajoute de la marge en haut et en bas de chaque section */
+}
+
+/* Style pour le titre principal (h1) */
+h1 {
+	display: flex; /* Utilise Flexbox pour organiser le titre et le sous-titre en colonne */
+	flex-direction: column; /* Aligne les éléments verticalement */
+	font-family: 'Syne'; /* Utilise la police 'Syne' */
+	font-size: 22px; /* Taille de la police pour le titre principal */
+	font-weight: 800; /* Police en gras épais */
+	color: #B1663C; /* Couleur marron pour le texte */
+}
+
+/* Style pour le sous-titre du h1 */
+h1 > span {
+	font-family: 'Work Sans'; /* Utilise la police 'Work Sans' */
+	font-size: 10px; /* Taille de la police pour le sous-titre */
+	letter-spacing: 0.1em; /* Espacement entre les lettres */
+	text-transform: uppercase; /* Convertit le texte en majuscules */
+	font-weight: 400; /* Police normale */
+}
+
+/* Style pour les sous-titres (h2) */
+h2 {
+	font-family: 'Syne'; /* Utilise la police 'Syne' */
+	font-weight: 700; /* Police en gras */
+	font-size: 30px; /* Taille de la police pour les sous-titres */
+	color: #1D6154; /* Couleur vert foncé pour le texte */
+}
+
+/* Style pour les éléments de la liste de navigation */
+nav ul {
+	display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+	list-style-type: none; /* Supprime les puces de la liste */
+	gap: 30px; /* Ajoute de l'espace entre chaque élément de la liste */
+}
+
+/* Style pour chaque élément de la liste de navigation */
+nav li {
+	padding: 0 10px; /* Ajoute du padding à gauche et à droite des éléments */
+	font-size: 1.2em; /* Taille de police plus grande pour les éléments de liste */
+}
+
+/* Style au survol des éléments de la liste de navigation */
+li:hover {
+	color: #B1663C; /* Change la couleur du texte en marron au survol */
+}
+
+/* Style pour les icônes de navigation */
+nav li img {
+	width: 19px; /* Définit la largeur des icônes */
+	height: 19px; /* Définit la hauteur des icônes */
+}
+
+/* Style pour les liens de navigation */
+nav li a {
+	color: #000000; /* Couleur noire pour le texte des liens */
+}
+
+/* Style pour la section d'introduction */
+#introduction {
+	display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+	align-items: center; /* Centre les éléments verticalement */
+}
+
+/* Style pour les images dans la section d'introduction */
+#introduction figure {
+	flex: 1; /* Laisse l'image prendre une partie égale de l'espace disponible */
+	position: relative; /* Positionne l'image par rapport à son conteneur */
+}
+
+/* Style pour les boutons dans la section d'introduction */
+#introduction figure button {
+	position: absolute; /* Positionne le bouton indépendamment du flux normal */
+    left: 10%; /* Positionne le bouton à 10% de la gauche */
+    margin-top: 13px; /* Ajoute un peu d'espace en haut */
+}
+
+/* Style pour les images d'introduction */
+#introduction img {
+	display: block; /* Affiche l'image comme un bloc (supprime les espaces blancs) */
+	margin: auto; /* Centre l'image horizontalement */
+	width: 80%; /* Définit la largeur de l'image à 80% du conteneur */
+}
+
+/* Style pour l'article dans la section d'introduction */
+#introduction article {
+	flex: 1; /* Laisse l'article prendre une partie égale de l'espace disponible */
+	position: relative; /* Positionne l'article par rapport à son conteneur */
+}
+
+/* Style pour les boutons dans l'article d'introduction */
+#introduction article button {
+	position: absolute; /* Positionne le bouton indépendamment du flux normal */
+	top: -39px; /* Positionne le bouton au-dessus du conteneur */
+}
+
+/* Style pour les sous-titres dans la section d'introduction */
+#introduction h2 {
+	margin-bottom: 1em; /* Ajoute de l'espace en bas du sous-titre */
+}
+
+/* Style pour les paragraphes dans la section d'introduction */
+#introduction p {
+	margin-bottom: 0.5em; /* Ajoute de l'espace en bas de chaque paragraphe */
+}
+
+/* Style pour le titre de la section portfolio */
+#portfolio h2 {
+	text-align: center; /* Centre le texte horizontalement */
+	margin-bottom: 1em; /* Ajoute de l'espace en bas du titre */
+	position: relative; /* Positionne le titre par rapport à son conteneur */
+}
+
+/* Style pour les boutons dans le titre de la section portfolio */
+#portfolio h2 button {
+	position: absolute; /* Positionne le bouton indépendamment du flux normal */
+	margin-left: 31px; /* Ajoute de l'espace à gauche du bouton */
+    bottom: 6px; /* Positionne le bouton en bas du conteneur */
+}
+
+/* Style pour la barre de filtres */
+.filter {
+    display: flex; /* Utilise Flexbox pour le filtre */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin: 51px auto; /* Centre la barre et ajoute de l'espace autour */
+}
+
+/* Style pour la liste de boutons de filtre */
+.btn-list {
+	display: flex; /* Utilise Flexbox pour les boutons */
+	justify-content: center; /* Centre les boutons horizontalement */
+	gap: 10px; /* Ajoute de l'espace entre chaque bouton */
+}
+
+/* Style pour chaque bouton de filtre */
+.btn {
+	color: #1D6154; /* Couleur vert foncé pour le texte */
+	border: 1px solid #1D6154; /* Bordure verte pour les boutons */
+	padding: 9px 21px; /* Ajoute du padding à l'intérieur des boutons */
+	border-radius: 60px; /* Arrondit les coins des boutons */
+	font-family: 'Syne', sans-serif; /* Utilise la police 'Syne' */
+	font-weight: 700; /* Police en gras pour le texte */
+	transition: background 400ms; /* Transition douce pour le changement de fond */
+}
+
+/* Style pour le bouton actif et au survol */
+.btn-active, .btn:hover {
+	background: #1D6154; /* Fond vert foncé */
+	color: #FFFFFF; /* Texte blanc */
+}
+
+/* Style pour la galerie de projets */
+.gallery {
+	width: 100%; /* Définit la largeur de la galerie à 100% */
+	display: grid; /* Utilise une grille pour afficher les projets */
+	grid-template-columns: 1fr 1fr 1fr; /* Définit trois colonnes égales */
+	grid-column-gap: 20px; /* Ajoute de l'espace entre les colonnes */
+	grid-row-gap: 20px; /* Ajoute de l'espace entre les rangées */
+}
+
+/* Style pour les images dans la galerie */
+.gallery img {
+	width: 100%; /* Définit la largeur des images à 100% du conteneur */
+}
+
+/* Style pour la section de contact */
+#contact {
+	width: 50%; /* Définit la largeur de la section à 50% du conteneur parent */
+	margin: auto; /* Centre la section horizontalement */
+}
+
+/* Style pour chaque élément dans la section de contact */
+#contact > * {
+	text-align: center; /* Centre le texte et les éléments */
+}
+
+/* Style pour le titre de la section de contact */
+#contact h2 {
+	margin-bottom: 20px; /* Ajoute de l'espace en bas du titre */
+}
+
+/* Style pour le formulaire de contact */
+#contact form {
+	text-align: left; /* Aligne le texte à gauche */
+	margin-top: 30px; /* Ajoute de l'espace en haut du formulaire */
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	flex-direction: column; /* Aligne les éléments en colonne */
+}
+
+/* Style pour les champs de saisie dans le formulaire de contact */
+#contact input {
+	height: 50px; /* Définit la hauteur des champs */
+	font-size: 1.2em; /* Taille de police plus grande pour les champs */
+	border: none; /* Supprime la bordure des champs */
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09); /* Ajoute une ombre douce aux champs */
+}
+
+/* Style pour les étiquettes du formulaire de contact */
+#contact label {
+	margin: 2em 0 1em 0; /* Ajoute de la marge autour des étiquettes */
+}
+
+/* Style pour la zone de texte dans le formulaire de contact */
+#contact textarea {
+	border: none; /* Supprime la bordure de la zone de texte */
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09); /* Ajoute une ombre douce */
+}
+
+/* Style pour le bouton de soumission du formulaire */
+input[type="submit"] {
+	font-family: 'Syne'; /* Utilise la police 'Syne' */
+	font-weight: 700; /* Police en gras */
+	color: white; /* Texte blanc */
+	background-color: #1D6154; /* Fond vert foncé */
+	margin: 37px auto 28px; /* Centre le bouton et ajoute de la marge */
+	border-radius: 60px; /* Bouton arrondi */
+	border: none; /* Supprime la bordure */
+	line-height: 36px; /* Hauteur de ligne pour centrer verticalement */
+	cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
+}
+
+/* Style pour la navigation dans le pied de page */
+footer nav ul {
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	justify-content: flex-end; /* Aligne les éléments à droite */
+	padding: 2em; /* Ajoute de l'espace intérieur */
+	background: #FFFFFF; /* Fond blanc */
+}
+
+/* Style pour la section de connexion */
+#login {
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	flex-direction: column; /* Aligne les éléments en colonne */
+	gap: 37px; /* Ajoute de l'espace entre les éléments */
+}
+
+/* Style pour le titre dans la section de connexion */
+#login h1 {
+	color: #1D6154; /* Couleur du texte vert foncé */
+	font-size: 30px; /* Taille de police du titre */
+	font-weight: 700; /* Police en gras */
+	text-align: center; /* Centre le texte horizontalement */
+}
+
+/* Style pour le formulaire de connexion */
+#login form {
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	flex-direction: column; /* Aligne les éléments en colonne */
+	align-items: center; /* Centre les éléments horizontalement */
+}
+
+/* Conteneur pour les champs de saisie du formulaire de connexion */
+.form-inputs {
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	flex-direction: column; /* Aligne les éléments en colonne */
+	gap: 30px; /* Ajoute de l'espace entre chaque champ de saisie */
+}
+
+/* Style pour chaque champ de saisie dans le formulaire de connexion */
+.form-input {
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	flex-direction: column; /* Aligne les éléments en colonne */
+	gap: 7px; /* Ajoute de l'espace entre l'étiquette et le champ de saisie */
+}
+
+/* Style pour les étiquettes dans le formulaire de connexion */
+.form-input label {
+	font-family: 'Work Sans'; /* Utilise la police 'Work Sans' */
+	font-weight: 600; /* Police légèrement en gras */
+	font-size: 14px; /* Taille de police des étiquettes */
+	color: #3D3D3D; /* Couleur gris foncé pour le texte */
+}
+
+/* Style pour les champs de saisie de type email et password */
+.form-input input[type='email'],
+.form-input input[type='password'] {
+	border: none; /* Supprime la bordure */
+	background: #FFFFFF; /* Fond blanc */
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09); /* Ajoute une ombre douce */
+	width: 379px; /* Largeur des champs */
+	line-height: 51px; /* Hauteur de ligne pour l'espacement vertical */
+	padding: 0 1em; /* Ajoute du padding à gauche et à droite */
+}
+
+/* Style pour le bouton de connexion */
+.login-btn {
+	font-size: 14px; /* Taille de police pour le bouton */
+	width: 179px; /* Largeur du bouton */
+}
+
+/* Style pour les liens dans le formulaire de connexion */
+#login form a {
+	color: #3D3D3D; /* Couleur gris foncé pour le texte */
+	text-decoration-line: underline; /* Souligne le texte */
+}
+
+/* Style pour le message d'erreur de connexion */
+#error-login {
+	color: #e32b2b; /* Couleur rouge pour le texte d'erreur */
+    text-align: center; /* Centre le texte horizontalement */
+	visibility: hidden; /* Cache le message par défaut */
+}
+
+/* Style pour les éléments actifs */
+.active {
+	font-weight: 600; /* Police légèrement en gras */
+}
+
+/* Style pour le bouton d'édition */
+.edit-btn {
+    display: none; /* Cache le bouton par défaut */
+    align-items: center; /* Centre le contenu verticalement */
+    gap: 8px; /* Ajoute de l'espace entre l'icône et le texte */
+    padding: 0; /* Supprime le padding */
+}
+
+/* Style pour les icônes dans les boutons d'édition */
+.edit-btn img {
+    width: 18px; /* Largeur de l'icône */
+    height: 18px; /* Hauteur de l'icône */
+}
+
+/* Style pour le conteneur de la fenêtre modale */
+.modal-container {
+	background: rgba(0, 0, 0, 0.3); /* Fond semi-transparent */
+	position: fixed; /* Positionnement fixe pour couvrir tout l'écran */
+	width: 100%; /* Largeur de 100% */
+	height: 100%; /* Hauteur de 100% */
+	left: 0; /* Aligne à gauche */
+	z-index: 1; /* Positionne au-dessus des autres éléments */
+	display: none; /* Cache par défaut */
+	justify-content: center; /* Centre horizontalement */
+	align-items: center; /* Centre verticalement */
+}
+
+/* Style pour le contenu de la modale */
+.modal {
+	background: #FFFFFF; /* Fond blanc */
+	border-radius: 10px; /* Coins arrondis */
+	width: calc(630px - 60px); /* Largeur spécifique */
+	height: auto; /* Hauteur automatique */
+	padding: 26px 30px 55px; /* Padding autour du contenu */
+}
+
+/* Style pour les boutons en haut de la modale */
+.modal-top-btn {
+	display: flex; /* Utilise Flexbox pour aligner les boutons */
+	justify-content: space-between; /* Espacement entre les boutons */
+	align-items: center; /* Centre verticalement */
+	margin-bottom: 10px; /* Ajoute de l'espace en bas */
+}
+
+/* Style pour le titre de la modale */
+.modal-title {
+	font-family: 'Work Sans', sans-serif; /* Utilise la police 'Work Sans' */
+	font-size: 26px; /* Taille de la police */
+	font-weight: 400; /* Poids de police normal */
+	text-align: center; /* Centre le texte */
+}
+
+/* Style pour le bouton de fermeture de la modale */
+.modal-close {
+	width: 24px; /* Largeur du bouton */
+	height: 24px; /* Hauteur du bouton */
+	display: inline-flex; /* Utilise Flexbox pour aligner le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+}
+
+/* Style pour le bouton de retour de la modale */
+.modal-comeback {
+	visibility: hidden; /* Cache par défaut */
+	width: 21px; /* Largeur du bouton */
+    height: 21px; /* Hauteur du bouton */
+    display: inline-flex; /* Utilise Flexbox pour aligner le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+}
+
+/* Style pour la galerie dans la modale */
+.modal-gallery {
+	display: grid; /* Utilise une grille pour afficher les images */
+	grid-template-columns: repeat(5, 1fr); /* 5 colonnes égales */
+    gap: 7px; /* Espace entre les images */
+    margin: 46px calc(105px - 30px) 0; /* Espace autour de la galerie */
+    row-gap: 16px; /* Espace entre les rangées */
+}
+
+/* Style pour chaque figure dans la galerie modale */
+.modal-gallery figure {
+	position: relative; /* Positionnement relatif */
+	width: 77px; /* Largeur de chaque figure */
+	height: 103px; /* Hauteur de chaque figure */
+}
+
+/* Style pour le contenu ajouté au survol des figures */
+.modal-gallery figure:hover::after {
+	opacity: 1; /* Affiche le contenu au survol */
+}
+
+/* Style pour les images dans les figures de la galerie */
+.modal-gallery figure > img {
+	width: 100%; /* Largeur des images à 100% du conteneur */
+	height: 100%; /* Hauteur des images à 100% du conteneur */
+	object-fit: cover; /* Couvre tout le conteneur en gardant les proportions */
+}
+
+/* Style pour les légendes des figures dans la galerie */
+.modal-gallery figure figcaption {
+	font-size: 12px; /* Taille de la police des légendes */
+}
+
+/* Style pour la section d'ajout de travail dans la modale */
+.modal-addwork {
+	display: none; /* Cache par défaut */
+	margin: 36px calc(105px - 30px) 0; /* Espace autour de la section */
+}
+
+/* Style pour le formulaire d'ajout de travail dans la modale */
+.modal-addwork form {
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	flex-direction: column; /* Aligne les éléments en colonne */
+}
+
+/* Style pour la section de téléchargement de fichiers */
+.upload-work {
+	background: #E8F1F7; /* Fond bleu clair */
+	border-radius: 3px; /* Coins légèrement arrondis */
+	height: 169px; /* Hauteur spécifique */
+}
+
+/* Style pour le formulaire de téléchargement d'images */
+.upload-work-form {
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	flex-direction: column; /* Aligne les éléments en colonne */
+	align-items: center; /* Centre les éléments horizontalement */
+	padding: 28px 0 19px; /* Espace intérieur en haut et en bas */
+	position: relative; /* Positionnement relatif */
+}
+
+/* Style pour le champ de téléchargement de fichiers */
+.upload-work-form input[type="file"] {
+	opacity: 0; /* Rend le champ invisible */
+    width: 173px; /* Largeur du champ */
+    height: 36px; /* Hauteur du champ */
+    position: absolute; /* Positionnement absolu */
+    left: 29.5%; /* Positionne à 29.5% de la gauche */
+    bottom: 23%; /* Positionne à 23% du bas */
+}
+
+/* Style pour les icônes dans le formulaire de téléchargement */
+.upload-work-form img {
+	width: 58px; /* Largeur de l'icône */
+	height: 46px; /* Hauteur de l'icône */
+}
+
+/* Style pour les boutons dans le formulaire de téléchargement */
+.upload-work-form button {
+	background: #CBD6DC; /* Fond gris clair */
+	color: #306685; /* Couleur du texte bleu foncé */
+	border-radius: 50px; /* Bouton arrondi */
+	font-family: 'Work Sans'; /* Utilise la police 'Work Sans' */
+	font-size: 14px; /* Taille de la police */
+	font-weight: 500; /* Police légèrement en gras */
+	padding: 10px 33px; /* Espace intérieur autour du texte */
+	margin: 21px 0 7px; /* Marge autour du bouton */
+}
+
+/* Style pour les indications de format dans le formulaire de téléchargement */
+.upload-work-form p {
+	font-family: 'Work Sans'; /* Utilise la police 'Work Sans' */
+	font-size: 10px; /* Taille de la police des indications */
+	font-weight: 400; /* Poids de police normal */
+	color: #444444; /* Couleur gris foncé */
+}
+
+/* Style pour les champs d'entrée dans le formulaire d'ajout de travail */
+.inputs-addwork {
+	margin-top: 30px; /* Marge en haut */
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	flex-direction: column; /* Aligne les éléments en colonne */
+	border-bottom: 1px solid #B3B3B3; /* Bordure en bas */
+    padding-bottom: 47px; /* Espace intérieur en bas */
+}
+
+/* Style pour les champs de texte dans le formulaire d'ajout de travail */
+.inputs-addwork input[type="text"] {
+	margin-bottom: 21px; /* Marge en bas */
+}
+
+/* Style pour les étiquettes dans le formulaire d'ajout de travail */
+.modal-addwork form label {
+	font-family: 'Work Sans'; /* Utilise la police 'Work Sans' */
+	font-size: 14px; /* Taille de la police des étiquettes */
+	font-weight: 500; /* Police légèrement en gras */
+	color: #3D3D3D; /* Couleur gris foncé */
+	margin-bottom: 10px; /* Marge en bas de chaque étiquette */
+}
+
+/* Style pour les champs de saisie et les listes déroulantes */
+.modal-addwork form input[type="text"],
+.modal-addwork form select {
+	background: #FFFFFF; /* Fond blanc */
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09); /* Ombre douce */
+	border: none; /* Supprime la bordure */
+	height: 51px; /* Hauteur des champs */
+	padding: 0 16px; /* Espace intérieur à gauche et à droite */
+	font-family: 'Work Sans'; /* Utilise la police 'Work Sans' */
+	font-size: 14px; /* Taille de la police */
+	font-weight: 400; /* Poids de police normal */
+	color: #444444; /* Couleur gris foncé */
+}
+
+/* Style pour les listes déroulantes */
+.modal-addwork form select {
+	appearance: none; /* Supprime le style par défaut */
+	-webkit-appearance: none; /* Supprime le style par défaut dans Webkit */
+	background-image: url('icons/select_arrow-icon.svg'); /* Icône de flèche personnalisée */
+	background-repeat: no-repeat; /* Pas de répétition de l'image */
+	background-position: calc(100% - 29px) center; /* Position de l'icône */
+}
+
+/* Style pour les boutons en bas de la modale */
+.modal-bottom-btn {
+	display: flex; /* Utilise Flexbox pour aligner les éléments */
+	flex-direction: column; /* Aligne les éléments en colonne */
+	align-items: center; /* Centre les éléments horizontalement */
+	gap: 23px; /* Espace entre les boutons */
+	margin: 38px calc(105px - 30px) 0; /* Espace autour des boutons */
+	padding-top: 47px; /* Espace en haut */
+    border-top: 1px solid #B3B3B3; /* Bordure en haut */
+}
+
+/* Style pour les boutons en bas de la modale */
+.modal-bottom-btn button {
+	background: #1D6154; /* Fond vert foncé */
+	border-radius: 60px; /* Bouton arrondi */
+	font-family: 'Syne'; /* Utilise la police 'Syne' */
+	font-size: 14px; /* Taille de la police */
+	font-weight: 700; /* Police en gras */
+	color: #FFFFFF; /* Texte blanc */
+	padding: 10px 49px; /* Espace intérieur autour du texte */
+}
+
+/* Style pour les icônes de suppression */
+.btn-del-icon {
+    position: absolute; /* Positionnement absolu */
+    background-color: #000000; /* Fond noir */
+    border-radius: 2px; /* Légers coins arrondis */
+    width: 17px; /* Largeur de l'icône */
+    height: 17px; /* Hauteur de l'icône */
+    display: inline-flex; /* Utilise Flexbox pour aligner les éléments */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+	top: 6px; /* Position en haut */
+	right: 6px; /* Position à droite */
+}
+
+/* Style pour les images des icônes de suppression */
+.btn-del-icon img {
+	width: 9px; /* Largeur de l'image */
+	height: 9px; /* Hauteur de l'image */
+	pointer-events: none; /* Désactive les événements de pointeur */
+}
+
+/* Style pour le bouton de soumission de travail */
+.btn-submit-work {
+	width: 237px; /* Largeur du bouton */
+}
+
+/* Style pour le conteneur d'image téléchargée */
+.upload-work-img {
+	justify-content: center; /* Centre le contenu horizontalement */
+	height: 100%; /* Hauteur de 100% */
+}
+
+/* Style pour l'image téléchargée */
+.current-img-upload {
+	width: 129px; /* Largeur de l'image */
+    height: 100%; /* Hauteur de l'image */
+	object-fit: cover; /* Couvre le conteneur tout en gardant les proportions */
+}
+
+/* Style pour la barre de mode édition */
+.editmode {
+    background: #000000; /* Fond noir */
+    width: 100%; /* Largeur de 100% */
+    height: 59px; /* Hauteur spécifique */
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    position: fixed; /* Fixe la barre en haut de la page */
+    top: 0; /* Positionnement en haut de la page */
+    left: 0; /* Alignement à gauche */
+    z-index: 1000; /* Assure que la barre est au-dessus des autres éléments */
+}
+
+/* Style pour le texte dans la barre de mode édition */
+.editmode p {
+    font-size: 16px; /* Taille de la police */
+    font-weight: 400; /* Poids de police normal */
+    color: #FFFFFF; /* Couleur blanche pour le texte */
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    align-items: center; /* Centre le contenu verticalement */
+    gap: 9px; /* Espace entre l'icône et le texte */
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+/* Style pour les icônes dans la barre de mode édition */
+.editmode img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(104deg) brightness(103%) contrast(103%); /* Filtre pour styliser l'icône */
+    width: 16px; /* Largeur de l'icône */
+    height: 16px; /* Hauteur de l'icône */
+}
+
+
